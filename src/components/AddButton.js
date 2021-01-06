@@ -1,26 +1,22 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
+import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
-import { withStyles } from '@material-ui/core/styles';
-import { deepOrange } from '@material-ui/core/colors';
+// const ColorButton = withStyles((theme) => ({
+//   root: {
+//     color: theme.palette.getContrastText(deepOrange[500]),
+//     backgroundColor: deepOrange[500],
+//     '&:hover': {
+//       backgroundColor: deepOrange[700],
+//     },
+//   },
+// }))(Fab);
 
-const ColorButton = withStyles((theme) => ({
-  root: {
-    color: theme.palette.getContrastText(deepOrange[500]),
-    backgroundColor: deepOrange[500],
-    borderRadius:'50%',
-    padding:20,
-    '&:hover': {
-      backgroundColor: deepOrange[700],
-    },
-  },
-}))(Button);
-
-const AddButton  = () => {
+const AddButton  = ({onclick}) => {
   return (
-    <ColorButton>
-      <AddIcon fontSize="large"/>
-    </ColorButton>
+    <Fab onClick={onclick} size="large" color="primary" >
+      <AddIcon />
+    </Fab>
   );
 }
 
